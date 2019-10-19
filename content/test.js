@@ -23,7 +23,7 @@ popupSnooze.prototype.connectedCallback = function() {
   );
 };
 
-// This doesn't log anything :()
+// This doesn't log anything :(
 calendarAlarmWidget.prototype.connectedCallback = function() {
   console.log("Hello from the calendar-alarm-widget");
 };

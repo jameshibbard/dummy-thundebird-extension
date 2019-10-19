@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Test Extension",
+  "description": "A test overlay extension that should work on TB68+",
+  "version": "1.0",
+  "author": "Jim",
+  "legacy": {
+    "type": "xul",
+    "options": {
+      "page": "chrome://testextension/content/options.xul",
+      "open_in_tab": false
+    }
+  },
+  "applications": {
+    "gecko": {
+      "id": "testextension@example.com",
+      "strict_min_version": "68.0"
+    }
+  }
+}

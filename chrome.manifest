@@ -1,0 +1,2 @@
+content  testextension  content/
+overlay  chrome://calendar/content/calendar-alarm-dialog.xul  chrome://testextension/content/test.xul

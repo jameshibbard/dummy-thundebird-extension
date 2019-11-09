@@ -1,29 +1,25 @@
-/* global customElements */
+/* global document, window, MozXULElement */
 
 'use strict';
 
-const popupSnooze = customElements.get('calendar-snooze-popup');
-const calendarAlarmWidget = customElements.get('calendar-alarm-widget');
+function buildCustomSnoozeMenu(menus){
+  menus.forEach((menu) => {
+    menu.prepend(
+      MozXULElement.parseXULToFragment(
+        `<menuitem label="1 Minute" value="1" oncommand="snoozeItem(event)" />`
+      )
+    );
+  });
+}
 
-console.log(popupSnooze);
-console.log(calendarAlarmWidget);
+function pollSnoozeMenus(){
+  const menus = document.querySelectorAll('[is="calendar-snooze-popup"]');
 
-// This will alter the snooze popup for the 'Snooze all for' menu
-popupSnooze.prototype.connectedCallback = function() {
-  console.log("Hello from the calendar-snooze-popup");
-
-  if (this.delayConnectedCallback() || this.hasConnected) {
-    return;
+  if(menus.length < 2) {
+    window.requestAnimationFrame(pollSnoozeMenus);
+  } else {
+    buildCustomSnoozeMenu(menus);
   }
-  this.hasConnected = true;
-  this.appendChild(
-    MozXULElement.parseXULToFragment(
-      `<menuitem label="Gimme 5!!!" value="5" oncommand="snoozeItem(event)"/>`,
-    )
-  );
-};
+}
 
-// This doesn't log anything :(
-calendarAlarmWidget.prototype.connectedCallback = function() {
-  console.log("Hello from the calendar-alarm-widget");
-};
+pollSnoozeMenus();

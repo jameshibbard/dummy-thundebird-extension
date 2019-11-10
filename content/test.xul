@@ -1,12 +1,5 @@
 <?xml version="1.0"?>
+
 <overlay id="testextension-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <script src="test.js"></script>
-
-  <!--  This also allows you to hook into the "Snooze all for" dialog -->
-  <!--
-  <menupopup id="alarm-snooze-all-popup">
-    <menuitem label="Hello, World!" oncommand="alert('Hello, World!')" />
-  </menupopup>
-  -->
-
 </overlay>

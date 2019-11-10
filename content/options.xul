@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog id="testextension_prefwindow"
+  onload="init()"
+  buttons="accept, cancel"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  title="Test extension options">
+
+  <script src="chrome://testextension/content/options.js"/>
+
+  <description>
+    Configure custom snooze times
+  </description>
+
+  <vbox width="250">
+    <hbox>
+      <checkbox label="One Minute" id="extensions.testextension.one" />
+    </hbox>
+    <hbox>
+      <checkbox label="Two Minutes" id="extensions.testextension.two" />
+    </hbox>
+    <hbox>
+      <checkbox label="Three Minutes" id="extensions.testextension.three" />
+    </hbox>
+    <hbox>
+      <checkbox label="Four Minutes" id="extensions.testextension.four" />
+    </hbox>
+  </vbox>
+</dialog>
